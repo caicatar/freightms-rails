@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+  <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
+  <title>Freight Management System</title>
+</head>
+
+<body>
+
+<div class="container">
+  <!-- Sidebar Section -->
+  <aside>
+    <div class="toggle">
+      <div class="logo">
+        <img src="<%= asset_path("logo.png") %>">
+        <h2>Freight<span class="danger">MS</span></h2>
+      </div>
+      <div class="close" id="close-btn">
+            <span class="material-icons-sharp">
+                close
+            </span>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <a href="<%= dashboard_page_path %>" class="<%= current_page?(dashboard_page_path) ? 'active' : '' %>">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+        <h3>Dashboard</h3>
+      </a>
+      <a href="<%= dashboard_order_page_path %>" class=" <%= current_page?(dashboard_order_page_path) ? 'active' : '' %> ">
+                    <span class="material-icons-sharp">
+                        local_shipping
+                    </span>
+        <h3>Orders</h3>
+      </a>
+      <a href="#">
+                    <span class="material-icons-sharp">
+                        map
+                    </span>
+        <h3>Ports</h3>
+      </a>
+      <a href="#">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+        <h3>Products</h3>
+      </a>
+      <li>
+        <%= link_to "Sign out", destroy_path, method: :delete, class: "dropdown-item" %>
+      </li>
+    </div>
+  </aside>
+  <!-- End of Sidebar Section -->
+
+  <!-- Main Content -->
+  <main>
+    <%= yield %>
+  </main>
+  <!-- End of Main Content -->
+
+  <!-- Right Section -->
+  <div class="right-section">
+    <div class="nav">
+      <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+      </button>
+      <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+        <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+      </div>
+
+      <div class="profile">
+        <div class="info">
+          <p>Hey, <b><%= current_user.email %></b></p>
+          <small class="text-muted">Admin</small>
+        </div>
+        <div class="profile-photo">
+          <img src="<%= asset_path("profile-2.jpg") %>"/>
+        </div>
+      </div>
+
+    </div>
+    <!-- End of Nav -->
+
+  </div>
+
+
+</div>
+
+<%= javascript_include_tag("index") %>
+
+</body>
+
+</html>

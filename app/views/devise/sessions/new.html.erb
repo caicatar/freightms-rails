@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous"
+  ></script>
+  <%= stylesheet_link_tag("index") %>
+  <title>Sign in & Sign up Form</title>
+</head>
+<body>
+<div class="container">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="#" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <%#= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: :email %>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <%#= f.label :password %>
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: :password %>
+          </div>
+          <%= f.submit "Log in", class:"btn solid" %>
+
+  <% end %>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  </form>
+  </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>FREIGHTMS</h3>
+        <p>
+          Freight Management Made Easy!
+        </p>
+      </div>
+      <img src="<%= asset_path("log.svg") %>" class="image" alt="" />
+    </div>
+  </div>
+</div>
+
+<script>
+    const sign_in_btn = document.querySelector("#sign-in-btn");
+    const sign_up_btn = document.querySelector("#sign-up-btn");
+    const container = document.querySelector(".container");
+
+    sign_up_btn.addEventListener("click", () => {
+        container.classList.add("sign-up-mode");
+    });
+
+    sign_in_btn.addEventListener("click", () => {
+        container.classList.remove("sign-up-mode");
+    });
+</script>
+</body>
+</html>

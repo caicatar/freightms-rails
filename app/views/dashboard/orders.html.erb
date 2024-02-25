@@ -1,0 +1,22 @@
+<div class="recent-orders">
+  <h2>Recent Orders</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Order Reference #</th>
+      <th>Order Type</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @orders.each do |order| %>
+      <td><%= link_to order.name, order_path(order.id) %></td>
+      <td><%= order.import %></td>
+      <td><%= order.date %></td>
+      <td><%= order.status %></td>
+    <% end %>
+    </tbody>
+  </table>
+</div>

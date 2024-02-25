@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  container: MyString
+  goods: MyString
+  billing_on: MyString
+  pricing: 1
+  volume: 1
+  weight: 1
+  unit_price: 1
+
+two:
+  container: MyString
+  goods: MyString
+  billing_on: MyString
+  pricing: 1
+  volume: 1
+  weight: 1
+  unit_price: 1
