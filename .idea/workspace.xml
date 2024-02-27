@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d42c1447-5355-4b83-84e6-e0280fecf737" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dashboard_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dashboard_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/load.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/model.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/order.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/order_tracking.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/route.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/service.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/orders.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/shipments.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/orders.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/shipments.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/orders/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/orders/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shared/_dashboard.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_dashboard.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240224032839_create_orders.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240224065142_add_status_to_orders.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240224072402_create_loads.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240224072554_create_routes.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240224072730_create_services.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240224072846_create_order_trackings.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/routes.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/routes.yml" afterDir="false" />
-    </list>
+    <list default="true" id="d42c1447-5355-4b83-84e6-e0280fecf737" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +129,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708737812919</updated>
       <workItem from="1708737816786" duration="26694000" />
-      <workItem from="1709019950210" duration="26217000" />
+      <workItem from="1709019950210" duration="26660000" />
     </task>
     <servers />
   </component>
