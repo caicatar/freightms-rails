@@ -9,8 +9,8 @@
 #   end
 User.create!(
   email: 'test@example.com',
-  password: '123',
-  password_confirmation: '123'
+  password: 'pokey12345',
+  password_confirmation: 'pokey12345'
 )
 
 Vehicle.create!(

@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d42c1447-5355-4b83-84e6-e0280fecf737" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240227140316_create_load_plan.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/20240227140316_create_load_plan.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashboard/shipments.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/shipments.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +54,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/db/migrate" />
+      <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/app/views/dashboard" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
@@ -131,7 +134,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708737812919</updated>
       <workItem from="1708737816786" duration="26694000" />
-      <workItem from="1709019950210" duration="28700000" />
+      <workItem from="1709019950210" duration="29381000" />
     </task>
     <servers />
   </component>
@@ -142,7 +145,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/db/20240227005814_create_shipments.rb</url>
+          <url>file://$PROJECT_DIR$/db/migrate/20240227005814_create_shipments.rb</url>
           <line>9</line>
           <properties myBlockOrdinal="-1">
             <option name="block-ordinal" value="-1" />
