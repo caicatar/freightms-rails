@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :shipments
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -16,7 +17,10 @@ Rails.application.routes.draw do
 
   # Dashboards
   get "dashboard", to: "dashboard#index", as: "dashboard_page"
-  get "dashboard_orders", to: "dashboard#orders", as: "dashboard_order_page"
+  get "dashboard_shipments", to: "dashboard#shipments", as: "dashboard_shipments_page"
+  get "dashboard_loads", to: "dashboard#loads", as: "dashboard_loads_page"
+  get "dashboard_warehouses", to: "dashboard#warehouses", as: "dashboard_warehouses_page"
+  get "dashboard_fleet", to: "dashboard#fleet", as: "dashboard_fleet_page"
 
 
 

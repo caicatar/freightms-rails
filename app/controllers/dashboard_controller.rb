@@ -2,10 +2,10 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @orders = Order.all
+    @shipments = Shipment.all
   end
 
-  def orders
-    @orders = Order.all
+  def shipments
+    @shipments = Shipment.all
   end
 end

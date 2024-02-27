@@ -4,48 +4,37 @@
   <div class="sales">
     <div class="status">
       <div class="info">
-        <h3>Total Sales</h3>
-        <h1>$65,024</h1>
+        <h3>Total Shipments</h3>
+        <h1><%= @shipments.count %></h1>
       </div>
-      <div class="progresss">
-        <svg>
-          <circle cx="38" cy="38" r="36"></circle>
-        </svg>
-        <div class="percentage">
-          <p>+81%</p>
-        </div>
+      <div class="shipment-summary">
+          <span class="material-icons-sharp" style="font-size: 50px;">
+          local_shipping
+          </span>
       </div>
     </div>
   </div>
   <div class="visits">
     <div class="status">
       <div class="info">
-        <h3>Site Visit</h3>
-        <h1>24,981</h1>
+        <h3>Available Drivers</h3>
+        <h1>-</h1>
       </div>
       <div class="progresss">
-        <svg>
-          <circle cx="38" cy="38" r="36"></circle>
-        </svg>
-        <div class="percentage">
-          <p>-48%</p>
-        </div>
+        <span class="material-icons-sharp" style="font-size: 50px;">
+          person
+        </span>
       </div>
     </div>
   </div>
   <div class="searches">
     <div class="status">
       <div class="info">
-        <h3>Searches</h3>
-        <h1>14,147</h1>
+        <h3>-</h3>
+        <h1>-</h1>
       </div>
       <div class="progresss">
-        <svg>
-          <circle cx="38" cy="38" r="36"></circle>
-        </svg>
-        <div class="percentage">
-          <p>+21%</p>
-        </div>
+        -
       </div>
     </div>
   </div>
@@ -54,26 +43,29 @@
 
 <!-- Recent Orders Table -->
 <div class="recent-orders">
-  <h2>Recent Orders</h2>
+  <h2>Recent Shipments</h2>
   <table>
     <thead>
     <tr>
-      <th>Order Reference #</th>
-      <th>Order Type</th>
+      <th>Shipment ID</th>
       <th>Date</th>
+      <th>Vehicle</th>
+      <th>Driver</th>
       <th>Status</th>
       <th></th>
     </tr>
     </thead>
     <tbody>
-    <% @orders.each do |order| %>
-      <td><%= link_to order.name, order_path(order.id) %></td>
-      <td><%= order.import %></td>
-      <td><%= order.date %></td>
-      <td><%= order.status %></td>
+    <% @shipments.each do |shipment| %>
+    <tr>
+      <td><%= link_to shipment.id, shipment_path(shipment.id) %></td>
+      <td><%= shipment.shipment_date %></td>
+      <td><%= shipment.vehicle.name %></td>
+      <td><%= shipment.driver.name %></td>
+      <td><%= shipment.status %></td>
+    </tr>
     <% end %>
     </tbody>
   </table>
-  <a href="#">Show All</a>
 </div>
 <!-- End of Recent Orders -->

@@ -1,2 +1,0 @@
-class OrderTracking < ApplicationRecord
-end

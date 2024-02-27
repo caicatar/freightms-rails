@@ -1,0 +1,24 @@
+<div class="recent-orders">
+  <h2>Shipments</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Shipment ID</th>
+      <th>Date</th>
+      <th>Vehicle</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @shipments.each do |shipment| %>
+    <tr>
+      <td><%= link_to shipment.id, shipment_path(shipment.id) %></td>
+      <td><%= shipment.shipment_date %></td>
+      <td><%= shipment.vehicle.name %></td>
+      <td><%= shipment.status %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

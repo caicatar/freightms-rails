@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route: one
+  vehicle: one
+  driver: one
+  departure_time: 2024-02-27 08:59:03
+  arrival_time: 2024-02-27 08:59:03
+
+two:
+  route: two
+  vehicle: two
+  driver: two
+  departure_time: 2024-02-27 08:59:03
+  arrival_time: 2024-02-27 08:59:03
