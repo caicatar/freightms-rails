@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d42c1447-5355-4b83-84e6-e0280fecf737" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240227005814_create_shipments.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/20240227005814_create_shipments.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240227140316_create_load_plan.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/20240227140316_create_load_plan.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +131,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708737812919</updated>
       <workItem from="1708737816786" duration="26694000" />
-      <workItem from="1709019950210" duration="28399000" />
+      <workItem from="1709019950210" duration="28700000" />
     </task>
     <servers />
   </component>
