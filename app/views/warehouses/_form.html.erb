@@ -1,0 +1,36 @@
+<%= form_with(model: warehouse) do |form| %>
+  <% if warehouse.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(warehouse.errors.count, "error") %> prohibited this warehouse from being saved:</h2>
+
+      <ul>
+        <% warehouse.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="order_form">
+    <div class="row">
+      <div class="order_details">
+        <h2>Warehouse Details</h2>
+        <%= form.label :"Warehouse Name"%>
+        <%= form.text_field :name, class:"input-field" %>
+        <%= form.label :"Address"%>
+        <%= form.text_field :address, class:"input-field" %>
+        <%= form.label :"Latitude"%>
+        <%= form.number_field :latitude, class:"input-field" %>
+        <%= form.label :"Longitude"%>
+        <%= form.number_field :latitude, class:"input-field" %>
+        <%= form.label :"Capacity"%>
+        <%= form.number_field :latitude, class:"input-field" %>
+
+        <br>
+        <br>
+        <%= form.submit class:"button" %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

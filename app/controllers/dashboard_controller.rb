@@ -8,4 +8,8 @@ class DashboardController < ApplicationController
   def shipments
     @shipments = Shipment.all
   end
+
+  def warehouses
+    @warehouses = Warehouse.all
+  end
 end

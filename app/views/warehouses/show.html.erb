@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+
+
+
+<p style="color: green"><%= notice %></p>
+<div class="order_form">
+  <h1>Warehouse ID: <%= @warehouse.id %></h1>
+  <div class="row">
+    <div class="order_details">
+      <h4>Warehouse Details</h4>
+      <h3>Warehouse:<strong><%=  @warehouse.name %></strong></h3>
+      <h3>Address: <strong><%= @warehouse.address %></strong></h3>
+      <h3>Latitude: <strong><%=  @warehouse.latitude %></strong></h3>
+      <h3>Longitude: <strong><%=  @warehouse.longitude %></strong></h3>
+      <h3>Capacity:<strong><%=  @warehouse.capacity %></strong></h3>
+    </div>
+  </div>
+
+</div>
+
+<%= render @warehouse %>
+
+<div>
+  <%= link_to "Edit this warehouse", edit_warehouse_path(@warehouse) %> |
+  <%= link_to "Back to warehouses", dashboard_warehouses_page_path %>
+
+  <%= button_to "Destroy this warehouse", @warehouse, method: :delete %>
+</div>
