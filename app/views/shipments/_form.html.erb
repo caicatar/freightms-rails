@@ -25,13 +25,13 @@
         <%= form.label :"Product ID" %>
         <%= form.collection_select :product_id, @products, :id, :name, {}, { class: 'input-field' }  %>
         <%= form.label :"Total Distance" %>
-        <%= form.number_field :total_distance, class: 'input-field' %>
+        <%= form.text_field :total_distance, class: 'input-field' %>
         <%= form.label :"Tracking Code" %>
         <%= form.text_field :tracking_code, class: 'input-field' %>
         <%= form.label :"Total Drive Time" %>
         <%= form.text_field :total_drive_time, class: 'input-field' %>
         <%= form.label :"Current Load" %>
-        <%= form.number_field :current_load, class: 'input-field' %>
+        <%= form.text_field :current_load, class: 'input-field' %>
 
         <br>
         <br>
