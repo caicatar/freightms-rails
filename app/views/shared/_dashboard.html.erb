@@ -28,7 +28,7 @@
     </div>
 
     <div class="sidebar">
-      <a href="<%= dashboard_page_path %>" class="<%= (current_page?('/dashboard')) ? 'active' : '' %>">
+      <a href="<%= dashboard_page_path %>" class="<%= (current_page?('/dashboard_page_path')) ? 'active' : '' %>">
                     <span class="material-icons-sharp">
                         dashboard
                     </span>
@@ -41,19 +41,19 @@
                     </span>
         <h3>Shipments</h3>
       </a>
-      <a href="<%= dashboard_warehouses_page_path %>" class="<%= (controller_name == 'dashboard' || controller_name == 'warehouses') ? 'active' : '' %>">
+      <a href="<%= dashboard_warehouses_page_path %>" class="<%= (current_page?('/dashboard_warehouses') || controller_name == 'warehouses') ? 'active' : '' %>">
                     <span class="material-icons-sharp">
                         warehouse
                     </span>
         <h3>Warehouses</h3>
       </a>
-      <a href="<%= dashboard_loads_page_path %> class="<%= (controller_name == 'dashboard' || controller_name == 'loads') ? 'active' : '' %>">
+      <a href="<%= dashboard_loads_page_path %> class="<%= (current_page?('/dashboard_loads') || controller_name == 'loads') ? 'active' : '' %>">
                     <span class="material-icons-sharp">
                         inventory_2
                     </span>
         <h3>Loads</h3>
       </a>
-      <a href="<%= dashboard_fleet_page_path %> class="<%= (controller_name == 'dashboard' || controller_name == 'fleet') ? 'active' : '' %>">
+      <a href="<%= dashboard_fleet_page_path %> class="<%= (current_page?('/dashboard_fleet') || controller_name == 'fleet') ? 'active' : '' %>">
                 <span class="material-icons-sharp">
                 directions_car
                 </span>

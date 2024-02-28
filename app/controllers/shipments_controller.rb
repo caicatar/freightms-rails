@@ -31,6 +31,7 @@ class ShipmentsController < ApplicationController
     @vehicles = Vehicle.all
     @products = Product.all
     @drivers = Driver.all
+    @shipments = Shipment.find(params[:id])
   end
 
   # POST /shipments or /shipments.json
