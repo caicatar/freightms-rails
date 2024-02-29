@@ -12,4 +12,8 @@ class DashboardController < ApplicationController
   def warehouses
     @warehouses = Warehouse.all
   end
+
+  def drivers
+    @drivers = Driver.all
+  end
 end
