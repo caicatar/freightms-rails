@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   get "dashboard_shipments", to: "dashboard#shipments", as: "dashboard_shipments_page"
   get "dashboard_loads", to: "dashboard#loads", as: "dashboard_loads_page"
   get "dashboard_warehouses", to: "dashboard#warehouses", as: "dashboard_warehouses_page"
-  get "dashboard_drivers", to: "dashboard#fdrivers", as: "dashboard_drivers_page"
-
+  get "dashboard_drivers", to: "dashboard#drivers", as: "dashboard_drivers_page"
+  get "dashboard_vehicles", to: "dashboard#vehicles", as: "dashboard_vehicles_page"
 
 
   devise_scope :user do

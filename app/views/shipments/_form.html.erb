@@ -45,12 +45,13 @@
         <%= form.collection_select :driver_id, @drivers, :id, :name, {}, { class: 'input-field' }  %>
       </div>
     </div>
+    <div class="row">
+      <%= link_to "Back to shipments", dashboard_shipments_page_path %>
+
+      <%= button_to "Destroy this Shipment", @shipment, method: :delete %>
+    </div>
+
   </div>
 
 <% end %>
-<div>
-  <%= link_to "Back to shipments", dashboard_shipments_page_path %>
-
-  <%= button_to "Destroy this Shipment", @shipment, method: :delete %>
-</div>
 

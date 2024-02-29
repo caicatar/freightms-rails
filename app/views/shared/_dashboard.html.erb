@@ -47,20 +47,20 @@
                     </span>
         <h3>Warehouses</h3>
       </a>
-      <a href="<%= dashboard_loads_page_path %> class="<%= (current_page?('/dashboard_loads') || controller_name == 'loads') ? 'active' : '' %>">
+      <a href="<%= dashboard_loads_page_path %>" class="<%= (current_page?('/dashboard_loads') || controller_name == 'loads') ? 'active' : '' %>">
                     <span class="material-icons-sharp">
                         inventory_2
                     </span>
         <h3>Loads</h3>
       </a>
-      <a href="<%= dashboard_fleet_page_path %> class="<%= (current_page?('/dashboard_vehicles') || controller_name == 'fleet') ? 'active' : '' %>">
+      <a href="<%= dashboard_vehicles_page_path %>" class="<%= (current_page?('/dashboard_vehicles') || controller_name == 'fleet') ? 'active' : '' %>">
                 <span class="material-icons-sharp">
                 directions_car
                 </span>
         <h3>Vehicles</h3>
       </a>
       </a>
-      <a href="<%= dashboard_drivers_page_path %> class="<%= (current_page?('/dashboard_drivers') || controller_name == 'driver') ? 'active' : '' %>">
+      <a href="<%= dashboard_drivers_page_path %>" class="<%= (current_page?('/dashboard_drivers') || controller_name == 'drivers') ? 'active' : '' %>">
       <span class="material-icons-sharp">
                 person
                 </span>

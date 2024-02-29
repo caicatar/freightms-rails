@@ -14,6 +14,13 @@ class DriversController < ApplicationController
 
   # GET /drivers/1 or /drivers/1.json
   def show
+    @shipment = Shipment.new
+    @warehouses = Warehouse.all
+    @vehicles = Vehicle.all
+    @drivers = Driver.all
+    @warehouses = Warehouse.all
+    @products = Product.all
+    @drivers = Driver.all
   end
 
   # GET /drivers/new
@@ -21,7 +28,6 @@ class DriversController < ApplicationController
     @shipment = Shipment.new
     @warehouses = Warehouse.all
     @vehicles = Vehicle.all
-    @drivers = Driver.all
     @warehouses = Warehouse.all
     @products = Product.all
     @drivers = Driver.all
@@ -91,6 +97,6 @@ class DriversController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def driver_params
-      params.require(:shipment).permit(:name, :license_number, vehicle_id)
+      params.require(:shipment).permit(:name, :license_number, :vehicle_id)
     end
 end

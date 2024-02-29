@@ -29,6 +29,11 @@
   </div>
 
   <%= render @shipment %>
+  <div class="row">
+    <%= link_to "Edit this shipment", edit_shipment_path(@shipment)%>
+    <%= link_to "Back to shipments", dashboard_shipments_page_path %>
+    <%= button_to "Destroy this shipment", @shipment, method: :delete %>
+  </div>
 
 </div>
 <div class="loads-table">

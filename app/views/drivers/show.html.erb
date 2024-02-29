@@ -1,10 +1,24 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @driver %>
 
-<div>
-  <%= link_to "Edit this driver", edit_driver_path(@driver) %> |
-  <%= link_to "Back to drivers", drivers_path %>
 
-  <%= button_to "Destroy this driver", @driver, method: :delete %>
+<p style="color: green"><%= notice %></p>
+<div class="order_form">
+  <h1>Driver ID: <%= @driver.id %></h1>
+  <div class="row">
+    <div class="order_details">
+      <h4>Driver Details</h4>
+      <h3>Driver Name:<strong><%=  @driver.name %></strong></h3>
+      <h3>Driver License: <strong><%= @driver.license_number %></strong></h3>
+      <br>
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <%= link_to "Edit this driver", edit_driver_path(@driver)%>
+      <%= link_to "Back to drivers", drivers_path %>
+      <%= button_to "Destroy this driver", @driver, method: :delete %>
+    </div>
+  </div>
+
 </div>
+

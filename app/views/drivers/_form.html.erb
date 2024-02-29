@@ -12,14 +12,12 @@
   <% end %>
     <div class="order_form">
       <div class="row">
-        <div class="ordear_details">
-          <h2>Shipment Details</h2>
+        <div class="order_details">
+          <h2>Driver Details</h2>
           <%= form.label :"Driver Name" %>
           <%= form.text_field :name, class: 'input-field' %>
           <%= form.label :"License Number" %>
           <%= form.text_field :license_number, class: 'input-field' %>
-          <%= form.label :"To Warehouse" %>
-          <%= form.collection_select :vehicle_id, @vehicles, :id, :name, {}, { class: 'input-field' }  %>
           <br>
           <br>
           <%= form.submit class:"button" %>

@@ -8,15 +8,13 @@
     <tr>
       <th>Name</th>
       <th>License Number</th>
-      <th>Vehicle</th>
     </tr>
     </thead>
     <tbody>
     <% @drivers.each do |driver| %>
     <tr>
-      <td><%= link_to driver.name, shipment_path(driver.id) %></td>
+      <td><%= link_to driver.name, driver_path(driver.id) %></td>
       <td><%= driver.license_number %></td>
-      <td><%= driver.vehicle.name %></td>
     </tr>
     <% end %>
     </tbody>

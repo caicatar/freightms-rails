@@ -1,3 +1,3 @@
 class Driver < ApplicationRecord
-  has_one :vehicle
+  has_many :vehicles
 end
