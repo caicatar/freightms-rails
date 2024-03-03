@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
   <script async src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.css" />
+  <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
   <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
+  <%= csrf_meta_tags %>
   <title>Freight Management System</title>
 </head>
 
@@ -35,36 +38,25 @@
         <h3>Dashboard</h3>
       </a>
       <a href="<%= dashboard_shipments_page_path %>"
-         class=" <%= (current_page?('/dashboard_shipments') || controller_name == 'shipments') ? 'active' : '' %>">
+         class=" <%= (current_page?('/dashboard_shipments') || controller_name == 'fms_g16_shipments') ? 'active' : '' %>">
                     <span class="material-icons-sharp">
                         local_shipping
                     </span>
         <h3>Shipments</h3>
       </a>
-      <a href="<%= dashboard_warehouses_page_path %>" class="<%= (current_page?('/dashboard_warehouses') || controller_name == 'warehouses') ? 'active' : '' %>">
-                    <span class="material-icons-sharp">
-                        warehouse
-                    </span>
-        <h3>Warehouses</h3>
+      <a href="<%= dashboard_routes_page_path %>"
+         class=" <%= (current_page?('/dashboard_routes') || controller_name == 'fms_g16_routes') ? 'active' : '' %>">
+                      <span class="material-icons-sharp">
+                          route
+                      </span>
+        <h3>Routes</h3>
       </a>
-      <a href="<%= dashboard_loads_page_path %>" class="<%= (current_page?('/dashboard_loads') || controller_name == 'loads') ? 'active' : '' %>">
+      <a href="<%= dashboard_loads_page_path %>" class="<%= (current_page?('/dashboard_loads') || controller_name == 'fms_g16_loads') ? 'active' : '' %>">
                     <span class="material-icons-sharp">
                         inventory_2
                     </span>
         <h3>Loads</h3>
       </a>
-      <a href="<%= dashboard_vehicles_page_path %>" class="<%= (current_page?('/dashboard_vehicles') || controller_name == 'fleet') ? 'active' : '' %>">
-                <span class="material-icons-sharp">
-                directions_car
-                </span>
-        <h3>Vehicles</h3>
-      </a>
-      </a>
-      <a href="<%= dashboard_drivers_page_path %>" class="<%= (current_page?('/dashboard_drivers') || controller_name == 'drivers') ? 'active' : '' %>">
-      <span class="material-icons-sharp">
-                person
-                </span>
-      <h3>Drivers</h3>
       </a>
       <li>
 
@@ -99,7 +91,7 @@
 
       <div class="profile">
         <div class="info">
-          <p>Hey, <b><%= current_user.email %></b></p>
+          <p>Hey, <b><%= current_fms_g16_user.email %></b></p>
           <small class="text-muted">Admin</small>
         </div>
         <div class="profile-photo">

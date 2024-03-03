@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Routes</h1>
+
+<div id="fms_g16_routes">
+  <% @fms_g16_routes.each do |fms_g16_route| %>
+    <%= render fms_g16_route %>
+    <p>
+      <%= link_to "Show this Route", fms_g16_route %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New Route", new_fms_g16_route_path %>

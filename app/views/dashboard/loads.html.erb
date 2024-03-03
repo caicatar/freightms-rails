@@ -1,0 +1,32 @@
+<div class="recent-orders">
+  <h2>Loads</h2>
+  <div style="width: 15%;">
+    <a href="<%= new_fms_g16_load_path %>" class="button" style="color: white;">Create Loads</a>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Load ID</th>
+      <th>Shipment ID</th>
+      <th>Route</th>
+      <th>Price</th>
+      <th>Fee</th>
+      <th>Total Weight</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @loads.each do |load| %>
+      <tr>
+
+        <td><%= link_to load.id, fms_g16_load_path(load.id) %></td>
+        <td><%= load.fms_g16_shipment.id %></td>
+        <td><%= link_to load.fms_g16_route.name, fms_g16_route_path(load.fms_g16_route_id) %></td>
+        <td><%= load.total_price %></td>
+        <td><%= load.total_fee %></td>
+        <td><%= load.total_weight %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

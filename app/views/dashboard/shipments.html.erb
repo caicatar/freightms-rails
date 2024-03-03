@@ -1,13 +1,14 @@
 <div class="recent-orders">
   <h2>Shipments</h2>
   <div style="width: 15%;">
-    <a href="<%= new_shipment_path %>" class="button" style="color: white;">Create Shipment</a>
+    <a href="<%= new_fms_g16_shipment_path %>" class="button" style="color: white;">Create Shipment</a>
   </div>
   <table>
     <thead>
     <tr>
-      <th>Shipment ID</th>
-      <th>Date</th>
+      <th>Shipments ID</th>
+      <th>Start Date</th>
+      <th>End Date</th>
       <th>Vehicle</th>
       <th>Status</th>
       <th></th>
@@ -16,12 +17,14 @@
     <tbody>
     <% @shipments.each do |shipment| %>
     <tr>
-      <td><%= link_to shipment.id, shipment_path(shipment.id) %></td>
-      <td><%= shipment.shipment_date %></td>
-      <td><%= shipment.vehicle.name %></td>
+      <td><%= link_to shipment.id, fms_g16_shipment_path(shipment.id) %></td>
+      <td><%= shipment.start_date %></td>
+      <td><%= shipment.end_date %></td>
+      <td><%= shipment.vehicle %></td>
       <td><%= shipment.status %></td>
     </tr>
     <% end %>
+    <%= paginate @shipments_page %>
     </tbody>
   </table>
 </div>

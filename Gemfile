@@ -9,7 +9,7 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+gem "mysql2"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -66,7 +66,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "devise", "~> 4.9"
+gem "devise"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "sassc-rails"
+gem 'kaminari'

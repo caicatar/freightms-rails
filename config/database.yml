@@ -1,46 +1,31 @@
-# PostgreSQL. Versions 9.3 and up are supported.
-#
-# Install the pg driver:
-#   gem install pg
-# On macOS with Homebrew:
-#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-# On Windows:
-#   gem install pg
-#       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
-#
-# Configure Using Gemfile
-# gem "pg"
-#
-default: &default
-  adapter: postgresql
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-  username: ror
-  password: XWare_2010
-  database: freightms-development
+#development:
+#  adapter: mysql2
+#  database: sust_main
+#  username: sust_matthew
+#  password: qwe
+#  host: 194.110.173.106
+#  encoding: utf8
 
 development:
-  <<: *default
-  adapter: postgresql
+  database: kargada_development
+  adapter: mysql2
+  encoding: utf8
   username: ror
-  password: XWare_2010
-  database: freightms-development
+  password: pokey123
+  host: localhost
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
-  <<: *default
-  adapter: postgresql
+  database: kargada_test
+  adapter: mysql2
+  encoding: utf8
   username: ror
-  password: XWare_2010
-  database: freightms-test
+  password: pokey123
+  host: localhost
 
 production:
-  <<: *default
-  adapter: postgresql
-  username: ror
-  password: ManSysDep_Ror
-  database: freightms-ror
-  #  port: 1968
+  adapter: mysql2
+  database: sust_main
+  username: sust_matthew
+  password: qwe
+  host: 194.110.173.106
+  encoding: utf8

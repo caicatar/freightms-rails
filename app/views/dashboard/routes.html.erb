@@ -1,0 +1,29 @@
+<div class="recent-orders">
+  <h2>Routes</h2>
+  <div style="width: 15%;">
+    <a href="<%= new_fms_g16_route_path %>" class="button" style="color: white;">Create Route</a>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Route Name</th>
+      <th>Origin Destination</th>
+      <th>Delivery Destination</th>
+      <th>Distance</th>
+      <th>Estimated Time</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @routes.each do |route| %>
+      <tr>
+        <td><%= link_to route.name, fms_g16_route_path(route.id) %></td>
+        <td><%= route.origin_location %></td>
+        <td><%= route.delivery_destination %></td>
+        <td><%= route.distance %></td>
+        <td><%= route.estimated_time %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

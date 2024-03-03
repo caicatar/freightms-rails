@@ -10,92 +10,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_27_140316) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "assignments", force: :cascade do |t|
-    t.bigint "route_id", null: false
-    t.bigint "vehicle_id", null: false
-    t.bigint "driver_id", null: false
-    t.datetime "departure_time"
-    t.datetime "arrival_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["driver_id"], name: "index_assignments_on_driver_id"
-    t.index ["route_id"], name: "index_assignments_on_route_id"
-    t.index ["vehicle_id"], name: "index_assignments_on_vehicle_id"
-  end
-
-  create_table "drivers", force: :cascade do |t|
+ActiveRecord::Schema[7.1].define(version: 2024_03_03_082247) do
+  create_table "fms_g16_loads", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
-    t.string "license_number"
-    t.bigint "vehicle_id", null: false
+    t.bigint "fms_g16_route_id"
+    t.bigint "fms_g16_shipment_id"
+    t.decimal "total_price", precision: 10
+    t.decimal "total_fee", precision: 10
+    t.decimal "total_weight", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["vehicle_id"], name: "index_drivers_on_vehicle_id"
+    t.index ["fms_g16_route_id"], name: "index_fms_g16_loads_on_fms_g16_route_id"
+    t.index ["fms_g16_shipment_id"], name: "index_fms_g16_loads_on_fms_g16_shipment_id"
   end
 
-  create_table "load_plans", force: :cascade do |t|
-    t.bigint "shipment_id", null: false
-    t.bigint "product_id", null: false
-    t.integer "quantity", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_load_plans_on_product_id"
-    t.index ["shipment_id"], name: "index_load_plans_on_shipment_id"
-  end
-
-  create_table "products", force: :cascade do |t|
+  create_table "fms_g16_orders", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.decimal "weight"
-    t.string "dimensions"
-    t.integer "quantity"
-    t.bigint "warehouse_id", null: false
+    t.string "item"
+    t.integer "price"
+    t.integer "free"
+    t.integer "weight"
+    t.string "dimension"
+    t.string "LocationFrom"
+    t.string "LocationTo"
+    t.bigint "fms_g16_route_id", null: false
+    t.bigint "fms_g16_load_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["warehouse_id"], name: "index_products_on_warehouse_id"
+    t.index ["fms_g16_load_id"], name: "index_fms_g16_orders_on_fms_g16_load_id"
+    t.index ["fms_g16_route_id"], name: "index_fms_g16_orders_on_fms_g16_route_id"
   end
 
-  create_table "routes", force: :cascade do |t|
+  create_table "fms_g16_routes", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
-    t.string "start_location"
-    t.string "end_location"
-    t.decimal "distance"
+    t.string "origin_location"
+    t.string "delivery_destination"
+    t.decimal "origin_latitude", precision: 10
+    t.decimal "origin_longitude", precision: 10
+    t.decimal "destination_latitude", precision: 10
+    t.decimal "destination_longitude", precision: 10
+    t.decimal "distance", precision: 10
+    t.decimal "estimated_time", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "shipments", force: :cascade do |t|
-    t.date "shipment_date"
-    t.bigint "to_warehouse_id", null: false
-    t.bigint "from_warehouse_id", null: false
-    t.bigint "product_id", null: false
-    t.bigint "vehicle_id", null: false
-    t.bigint "driver_id", null: false
-    t.string "from_location"
-    t.string "to_location"
-    t.float "to_lat"
-    t.float "to_long"
-    t.float "from_lat"
-    t.float "from_long"
+  create_table "fms_g16_shipments", charset: "utf8mb3", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "fms_g16_route_id", null: false
+    t.string "vehicle"
+    t.string "driver"
     t.integer "total_distance"
     t.string "tracking_code"
     t.string "total_drive_time"
     t.string "status"
     t.integer "quantity"
-    t.decimal "current_load"
+    t.decimal "current_load", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["driver_id"], name: "index_shipments_on_driver_id"
-    t.index ["from_warehouse_id"], name: "index_shipments_on_from_warehouse_id"
-    t.index ["product_id"], name: "index_shipments_on_product_id"
-    t.index ["to_warehouse_id"], name: "index_shipments_on_to_warehouse_id"
-    t.index ["vehicle_id"], name: "index_shipments_on_vehicle_id"
+    t.index ["fms_g16_route_id"], name: "index_fms_g16_shipments_on_fms_g16_route_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -107,35 +84,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_27_140316) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "vehicles", force: :cascade do |t|
-    t.string "name"
-    t.string "vehicle_type"
-    t.decimal "capacity"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "warehouses", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
-    t.integer "capacity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "assignments", "drivers"
-  add_foreign_key "assignments", "routes"
-  add_foreign_key "assignments", "vehicles"
-  add_foreign_key "drivers", "vehicles"
-  add_foreign_key "load_plans", "products"
-  add_foreign_key "load_plans", "shipments"
-  add_foreign_key "products", "warehouses"
-  add_foreign_key "shipments", "drivers"
-  add_foreign_key "shipments", "products"
-  add_foreign_key "shipments", "vehicles"
-  add_foreign_key "shipments", "warehouses", column: "from_warehouse_id"
-  add_foreign_key "shipments", "warehouses", column: "to_warehouse_id"
+  add_foreign_key "fms_g16_loads", "fms_g16_routes"
+  add_foreign_key "fms_g16_loads", "fms_g16_shipments"
+  add_foreign_key "fms_g16_orders", "fms_g16_loads"
+  add_foreign_key "fms_g16_orders", "fms_g16_routes"
+  add_foreign_key "fms_g16_shipments", "fms_g16_routes"
 end

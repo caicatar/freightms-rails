@@ -1,0 +1,59 @@
+<p style="color: green"><%= notice %></p>
+<div class="order_form">
+  <h1>Shipment ID: <%= @fms_g16_shipment.id %></h1>
+  <h2>Status:<strong><%= @fms_g16_shipment.status %></strong></h2>
+  <div class="row">
+    <div class="order_details">
+      <h4>Load Details</h4>
+      <h3>Shipment ID:<strong><%= @fms_g16_shipment.id %></strong></h3>
+      <h3>Start Date:<strong><%= @fms_g16_shipment.start_date %></strong></h3>
+      <h3>End Date:<strong><%= @fms_g16_shipment.end_date %></strong></h3>
+      <h3>Route: <strong><%=  @fms_g16_shipment.fms_g16_route.name %></strong></h3>
+      <h3>Total Distance: <strong><%= @fms_g16_shipment.total_distance %></strong></h3>
+      <h3>Tracking Code: <strong><%= @fms_g16_shipment.tracking_code %></strong></h3>
+      <h3>Total Drive Time: <strong><%= @fms_g16_shipment.total_drive_time %></strong></h3>
+      <br>
+    </div>
+    <div class="order_details">
+      <h4>Fleet Information</h4>
+      <h3>Vehicle: <strong><%=  @fms_g16_shipment.vehicle %></strong></h3>
+      <h3>Driver: <strong><%= @fms_g16_shipment.driver %></strong></h3>
+    </div>
+  </div>
+
+  <%= render @fms_g16_shipment %>
+  <div class="row">
+    <%= link_to "Edit this load", edit_fms_g16_shipment_path(@fms_g16_shipment), class:"button"%>
+    <%= link_to "Back to loads", dashboard_shipments_page_path, class:"button" %>
+    <%= button_to "Destroy this load", @fms_g16_shipment, method: :delete, class:"button" %>
+  </div>
+
+</div>
+<div class="loads-table">
+  <h2>Loads</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Load ID</th>
+      <th>Shipment ID</th>
+      <th>Route</th>
+      <th>Price</th>
+      <th>Fee</th>
+      <th>Total Weight</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @fms_g16_loads.each do |load| %>
+      <tr>
+        <td><%= link_to load.id, fms_g16_load_path(load.id) %></td>
+        <td><%= load.fms_g16_shipment.id %></td>
+        <td><%= link_to load.fms_g16_route.name, fms_g16_route_path(load.fms_g16_route_id) %></td>
+        <td><%= load.total_price %></td>
+        <td><%= load.total_fee %></td>
+        <td><%= load.total_weight %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

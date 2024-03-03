@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+<div class="order_form">
+  <h1>Route Name: <%= @fms_g16_route.name %></h1>
+  <div class="row">
+    <div class="order_details">
+      <h4>Route Details</h4>
+      <h3>Origin Location: <strong><%= @fms_g16_route.origin_location %></strong></h3>
+      <h3>Latitude: <strong><%= @fms_g16_route.origin_latitude %></strong></h3>
+      <h3>Longitude: <strong><%= @fms_g16_route.origin_longitude %></strong></h3>
+      <br>
+      <h3>Delivery Destination: <strong><%= @fms_g16_route.delivery_destination %></strong></h3>
+      <h3>Latitude: <strong><%= @fms_g16_route.destination_latitude %></strong></h3>
+      <h3>Longitude: <strong><%= @fms_g16_route.destination_longitude %></strong></h3>
+      <h3>Distance: <strong><%= @fms_g16_route.distance %></strong></h3>
+      <h3>Estimated Travel Time: <strong><%= @fms_g16_route.estimated_time %></strong></h3>
+      <br>
+    </div>
+  </div>
+
+  <%= render @fms_g16_route %>
+  <div class="row">
+    <%= link_to "Edit this route", edit_fms_g16_route_path(@fms_g16_route), class:"button"%>
+    <%= link_to "Back to route", dashboard_routes_page_path, class:"button" %>
+    <%= button_to "Destroy this route", @fms_g16_route, method: :delete, class:"button" %>
+  </div>
+
+</div>

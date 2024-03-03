@@ -5,7 +5,110 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d42c1447-5355-4b83-84e6-e0280fecf737" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/freightms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/freightms.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/dashboard_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dashboard_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/drivers_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/shipments_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users/confirmations_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users/omniauth_callbacks_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users/passwords_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users/registrations_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users/sessions_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users/unlocks_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/warehouses_controller.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/drivers_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/orders_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/shipments_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/warehouses_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/assignment.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/driver.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/load_plan.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/product.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/route.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/shipment.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/vehicle.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/warehouse.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashboard/drivers.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashboard/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashboard/shipments.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/shipments.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashboard/warehouses.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/confirmations/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/confirmation_instructions.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/email_changed.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/password_change.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/reset_password_instructions.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/mailer/unlock_instructions.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/shared/_error_messages.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/shared/_links.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/unlocks/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/drivers/_driver.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/drivers/_driver.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/drivers/_form.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/drivers/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/drivers/index.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/drivers/index.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/drivers/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/drivers/show.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/drivers/show.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/drivers.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/fms_g16_shipments.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/shipments.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/warehouses.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/_form.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/_order.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/_order.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/index.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/index.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/show.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/orders/show.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_dashboard.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_dashboard.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shipments/_form.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shipments/_shipment.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shipments/_shipment.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shipments/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shipments/index.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shipments/index.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shipments/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shipments/show.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shipments/show.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/warehouses/_form.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/warehouses/_warehouse.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/warehouses/_warehouse.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/warehouses/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/warehouses/index.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/warehouses/index.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/warehouses/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/warehouses/show.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/warehouses/show.json.jbuilder" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/devise.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/locales/devise.en.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/20240227005830_create_vehicles.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240224055948_devise_create_users.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240227005739_create_warehouses.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240227005802_create_products.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240227005814_create_shipments.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240227005840_create_drivers.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240227005851_create_routes.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240227005903_create_assignments.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240227123653_rename_type_to_vehicle_type.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20240227140316_create_load_plan.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fixtures/routes.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/routes.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fixtures/vehicles.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/vehicles.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +119,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="ERB File" />
         <option value="JavaScript File" />
+        <option value="ERB File" />
         <option value="Ruby File" />
       </list>
     </option>
@@ -33,33 +136,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/caicatar/Documents/freightms/app/views/dashboard",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ruby.rails.projectView.checked": "true",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/caicatar/Documents/freightms/app/views/layouts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/views/dashboard" />
       <recent name="$PROJECT_DIR$/app/views/layouts" />
+      <recent name="$PROJECT_DIR$/app/views/dashboard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/app/models" />
       <recent name="$PROJECT_DIR$/db/migrate" />
-      <recent name="$PROJECT_DIR$/db" />
+      <recent name="$PROJECT_DIR$/app/views/dashboard" />
       <recent name="$PROJECT_DIR$/app/mailers" />
-      <recent name="$PROJECT_DIR$/app/models/concerns" />
     </key>
   </component>
   <component name="RunManager" selected="Rails.freightms">
@@ -72,7 +175,11 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
@@ -91,7 +198,11 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
@@ -113,7 +224,11 @@
         <env name="RAILS_ENV" value="test" />
       </envs>
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
@@ -136,6 +251,11 @@
       <updated>1708737812919</updated>
       <workItem from="1708737816786" duration="26694000" />
       <workItem from="1709019950210" duration="36986000" />
+      <workItem from="1709250829628" duration="420000" />
+      <workItem from="1709385401152" duration="742000" />
+      <workItem from="1709442434027" duration="15000" />
+      <workItem from="1709442523543" duration="407000" />
+      <workItem from="1709442935697" duration="31832000" />
     </task>
     <servers />
   </component>

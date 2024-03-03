@@ -1,19 +1,25 @@
 class DashboardController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_fms_g16_user!
 
   def index
-    @shipments = Shipment.all
+    @shipments = FmsG16Shipment.all
+    @loads = FmsG16Load.all
+    @routes = FmsG16Route.all
   end
 
   def shipments
-    @shipments = Shipment.all
+    @shipments_page = FmsG16Shipment.page(params[:page]).per(2)
+    @shipments = FmsG16Shipment.all
   end
 
-  def warehouses
-    @warehouses = Warehouse.all
+  def loads
+    @loads = FmsG16Load.all
+    @routes = FmsG16Route.all
+    @shipments = FmsG16Shipment.all
   end
 
-  def drivers
-    @drivers = Driver.all
+  def routes
+    @routes = FmsG16Route.all
   end
 end
+
