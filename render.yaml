@@ -1,17 +1,11 @@
-databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
-    plan: free
-
 services:
   - type: web
-    name: mysite
+    name: kargada_fms
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
-    startCommand: "bundle exec rails server"
+    startCommand: "bundle exec RAILS_ENV=production rails server"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
