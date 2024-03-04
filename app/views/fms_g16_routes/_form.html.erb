@@ -20,26 +20,24 @@
         <%= form.label :"Origin Location"%>
         <%= form.text_field :origin_location, class: 'input-field' %>
         <%= form.label :"Latitude" %>
-        <%= form.number_field :origin_latitude, class: 'input-field' %>
+        <%= form.number_field :origin_latitude, step: 'any' , class: 'input-field' %>
         <%= form.label :"Longitude" %>
-        <%= form.number_field :origin_longitude, class: 'input-field' %>
+        <%= form.number_field :origin_longitude, step: 'any', class: 'input-field' %>
         <%= form.label :"Delivery Destination"%>
         <%= form.text_field :delivery_destination, class: 'input-field' %>
         <%= form.label :"Latitude" %>
-        <%= form.number_field :destination_latitude, class: 'input-field' %>
+        <%= form.number_field :destination_latitude, step: 'any', class: 'input-field' %>
         <%= form.label :"Longitude" %>
-        <%= form.number_field :destination_longitude, class: 'input-field' %>
-        <%= form.label :"Total Weight" %>
-        <%= form.text_field :total_weight, class: 'input-field' %>
+        <%= form.number_field :destination_longitude, step: 'any', class: 'input-field' %>
 
         <br>
         <br>
-        <%= form.submit "Save load", class:"button" %>
+        <%= form.submit "Save route", class:"button" %>
       </div>
     </div>
     <div class="row">
-      <%= link_to "Show this load", @fms_g16_load %>
-      <%= link_to "Back to warehouses", dashboard_loads_page_path %>
+      <%= link_to "Show this route", @fms_g16_route %>
+      <%= link_to "Back to warehouses", dashboard_routes_page_path %>
     </div>
   </div>
 

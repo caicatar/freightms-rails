@@ -29,6 +29,17 @@ class FmsG16ShipmentsController < ApplicationController
 
     respond_to do |format|
       if @fms_g16_shipment.save
+        user = current_fms_g16_user
+        origin_location = @fms_g16_shipment.fms_g16_route.origin_location
+        origin_latitude = @fms_g16_shipment.fms_g16_route.origin_latitude
+        origin_longitude = @fms_g16_shipment.fms_g16_route.origin_longitude
+        delivery_destination = @fms_g16_shipment.fms_g16_route.delivery_destination
+        destination_latitude = @fms_g16_shipment.fms_g16_route.destination_latitude
+        destination_longitude = @fms_g16_shipment.fms_g16_route.destination_longitude
+        total_weight = 100
+        @fms_g11_trip = FmsG11Trips.create(fms_g11_trips_params(origin_location, origin_longitude, origin_latitude,delivery_destination,
+                                                                destination_latitude, destination_longitude, total_weight, user))
+
         format.html { redirect_to fms_g16_shipment_url(@fms_g16_shipment), notice: "Shipment was successfully created." }
         format.json { render :show, status: :created, location: @fms_g16_shipment }
       else
@@ -74,4 +85,29 @@ class FmsG16ShipmentsController < ApplicationController
                                                :tracking_code, :total_drive_time, :status)
 
     end
+
+  def fms_g11_trips_params(origin_location, origin_longitude, origin_latitude,delivery_destination,
+                           destination_latitude, destination_longitude, total_weight, user)
+    {
+      t_start_date: params[:fms_g16_shipment][:start_date],
+      t_end_date: params[:fms_g16_shipment][:end_date],
+      t_trip_fromlocation: origin_location,
+      t_trip_tolocation: delivery_destination,
+      t_trip_fromlat: origin_latitude,
+      t_trip_fromlog: origin_longitude,
+      t_trip_tolat: destination_latitude,
+      t_trip_tolog: destination_longitude,
+      t_driver: params[:fms_g16_shipment][:driver],
+      t_vehicle: params[:fms_g16_shipment][:vehicle],
+      t_totalweight: total_weight,
+      t_totaldistance: params[:fms_g16_shipment][:total_distance],
+      t_totaldrivetime: params[:fms_g16_shipment][:total_drive_time],
+      t_trip_status: params[:fms_g16_shipment][:status],
+      t_trackingcode: params[:fms_g16_shipment][:tracking_code],
+      t_created_by: user,
+      t_created_date: Time.current,
+      t_modified_date: Time.current,
+    }
+
+  end
 end

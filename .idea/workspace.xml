@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d42c1447-5355-4b83-84e6-e0280fecf737" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/render.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/fms_g16_routes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/fms_g16_routes_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/fms_g16_shipments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/fms_g16_shipments_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/fms_g16_routes/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/fms_g16_routes/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/fms_g16_routes/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/fms_g16_routes/new.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,22 +37,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/caicatar/Documents/freightms/app/views/layouts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/caicatar/Documents/freightms/app/views/layouts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ruby.rails.projectView.checked": "true",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/views/layouts" />
@@ -152,7 +157,7 @@
       <workItem from="1709385401152" duration="742000" />
       <workItem from="1709442434027" duration="15000" />
       <workItem from="1709442523543" duration="407000" />
-      <workItem from="1709442935697" duration="32178000" />
+      <workItem from="1709442935697" duration="37088000" />
     </task>
     <servers />
   </component>

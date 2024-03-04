@@ -65,6 +65,7 @@ class FmsG16RoutesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def fms_g16_route_params
-      params.fetch(:fms_g16_route, {})
+      # params.fetch(:fms_g16_route, {})
+        params.require(:fms_g16_route).permit(:name, :origin_location, :delivery_destination, :origin_latitude, :origin_longitude, :destination_latitude, :destination_longitude, :distance, :estimated_time)
     end
 end
