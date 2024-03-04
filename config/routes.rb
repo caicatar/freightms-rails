@@ -23,11 +23,9 @@ Rails.application.routes.draw do
   get "dashboard_loads", to: "dashboard#loads", as: "dashboard_loads_page"
   get "dashboard_routes", to: "dashboard#routes", as: "dashboard_routes_page"
 
-  delete "/fms_g16_loads/:id", to: "fms_g16_loads#destroy", as: "fms_g16_loads_destroy"
-
   devise_scope :fms_g16_user do
-    get "admin" => "fms_g16_users/sessions#new", as: "login"
-    get "logout" => "fms_g16_users/sessions#destroy", as: "destroy"
+    get "admin" => "devise/sessions#new", as: "login"
+    get "logout" => "devise/sessions#destroy", as: "destroy"
   end
 
 
