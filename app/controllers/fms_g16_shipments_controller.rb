@@ -29,16 +29,18 @@ class FmsG16ShipmentsController < ApplicationController
 
     respond_to do |format|
       if @fms_g16_shipment.save
-        user = current_fms_g16_user
-        origin_location = @fms_g16_shipment.fms_g16_route.origin_location
-        origin_latitude = @fms_g16_shipment.fms_g16_route.origin_latitude
-        origin_longitude = @fms_g16_shipment.fms_g16_route.origin_longitude
-        delivery_destination = @fms_g16_shipment.fms_g16_route.delivery_destination
-        destination_latitude = @fms_g16_shipment.fms_g16_route.destination_latitude
-        destination_longitude = @fms_g16_shipment.fms_g16_route.destination_longitude
-        total_weight = 100
-        @fms_g11_trip = FmsG11Trips.create(fms_g11_trips_params(origin_location, origin_longitude, origin_latitude,delivery_destination,
-                                                                destination_latitude, destination_longitude, total_weight, user))
+        if @fms_g16_shipment.status == 'pending'
+          user = current_fms_g16_user
+          origin_location = @fms_g16_shipment.fms_g16_route.origin_location
+          origin_latitude = @fms_g16_shipment.fms_g16_route.origin_latitude
+          origin_longitude = @fms_g16_shipment.fms_g16_route.origin_longitude
+          delivery_destination = @fms_g16_shipment.fms_g16_route.delivery_destination
+          destination_latitude = @fms_g16_shipment.fms_g16_route.destination_latitude
+          destination_longitude = @fms_g16_shipment.fms_g16_route.destination_longitude
+          total_weight = 100
+          @fms_g11_trip = FmsG11Trips.create(fms_g11_trips_params(origin_location, origin_longitude, origin_latitude,delivery_destination,
+                                                                  destination_latitude, destination_longitude, total_weight, user))
+          end
 
         format.html { redirect_to fms_g16_shipment_url(@fms_g16_shipment), notice: "Shipment was successfully created." }
         format.json { render :show, status: :created, location: @fms_g16_shipment }
