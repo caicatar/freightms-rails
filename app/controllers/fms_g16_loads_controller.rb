@@ -9,9 +9,9 @@ class FmsG16LoadsController < ApplicationController
   # GET /fms_g16_loads/1 or /fms_g16_loads/1.json
   def show
     @fms_g16_routes = FmsG16Route.all
-    @fms_g16_orders = FmsG16Order.all
     @fms_g16_shipments = FmsG16Shipment.all
     @fms_g16_load = FmsG16Load.find(params[:id])
+    @fms_g16_orders = @fms_g16_load.fms_g16_orders
   end
 
   # GET /fms_g16_loads/new

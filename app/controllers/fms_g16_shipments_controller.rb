@@ -8,7 +8,8 @@ class FmsG16ShipmentsController < ApplicationController
 
   # GET /fms_g16_shipments/1 or /fms_g16_shipments/1.json
   def show
-    @fms_g16_loads = FmsG16Load.all
+    @fms_g16_shipment = FmsG16Shipment.find(params[:id])
+    @fms_g16_loads = @fms_g16_shipment.fms_g16_loads
   end
 
   # GET /fms_g16_shipments/new
