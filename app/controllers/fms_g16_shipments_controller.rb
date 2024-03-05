@@ -30,7 +30,8 @@ class FmsG16ShipmentsController < ApplicationController
 
     respond_to do |format|
       if @fms_g16_shipment.save
-        if @fms_g16_shipment.status == 'pending'
+        logger.info @fms_g16_shipment.status
+        if @fms_g16_shipment.status == 'Pending'
           user = current_fms_g16_user
           origin_location = @fms_g16_shipment.fms_g16_route.origin_location
           origin_latitude = @fms_g16_shipment.fms_g16_route.origin_latitude
