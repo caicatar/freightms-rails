@@ -32,7 +32,7 @@ class FmsG16ShipmentsController < ApplicationController
       if @fms_g16_shipment.save
         logger.info @fms_g16_shipment.status
         if @fms_g16_shipment.status == 'Pending'
-          user = current_fms_g16_user
+          user = current_fms_g16_user.email
           origin_location = @fms_g16_shipment.fms_g16_route.origin_location
           origin_latitude = @fms_g16_shipment.fms_g16_route.origin_latitude
           origin_longitude = @fms_g16_shipment.fms_g16_route.origin_longitude
