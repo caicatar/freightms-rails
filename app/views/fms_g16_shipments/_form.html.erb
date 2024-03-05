@@ -16,18 +16,22 @@
       <div class="order_details">
         <h2>Shipment Details</h2>
         <%= form.label :"Status" %>
-        <%= form.select :status, [['Pending', 'pending'],
-          ['In Progress', 'in_progress'],
-          ['Cancelled', 'cancelled'],
-          ['Completed', 'completed']], {}, { class: 'input-field' } %>
+        <%= form.select :status, [['Pending', 'Pending'],
+          ['In Progress', 'In Progress'],
+          ['Cancelled', 'Cancelled'],
+          ['Completed', 'Completed']], {}, { class: 'input-field' } %>
         <%= form.label :"Route" %>
         <%= form.collection_select :fms_g16_route_id, @fms_g16_routes, :id, :name, {}, { class: 'input-field' }  %>
         <%= form.label :"Start date"%>
         <%= form.date_field :start_date, class:"input-field" %>
         <%= form.label :"End date"%>
         <%= form.date_field :end_date, class:"input-field" %>
-        <%= form.label :"Vehicle"%>
-        <%= form.text_field :vehicle, class:"input-field" %>
+        <%= form.label :"Vehicle" %>
+        <%= form.select :vehicle, [['Volvo FH16', 'Volvo FH16'],
+                                  ['Scania R730', 'Scania R730'],
+                                  ['Mercedes-Benz Actros', 'Mercedes-Benz Actros'],
+                                  ['MAN TGX', 'MAN TGX'], ['IVECO Stralis', 'IVECO Stralis'],
+                                   ['DAF XF', 'DAF XF'],['Renault T Range', 'Renault T Range']], {}, { class: 'input-field' } %>
         <%= form.label :"Driver"%>
         <%= form.text_field :driver, class:"input-field" %>
         <%= form.label :"Total Distance" %>
