@@ -4,10 +4,15 @@ class FmsG16ShipmentsController < ApplicationController
   # GET /fms_g16_shipments or /fms_g16_shipments.json
   def index
     @fms_g16_shipments = FmsG16Shipment.all
+    @fms_g16_shipment = FmsG16Shipment.new
+    @fms_g16_routes = FmsG16Route.all
   end
 
   # GET /fms_g16_shipments/1 or /fms_g16_shipments/1.json
   def show
+    @fms_g16_shipments = FmsG16Shipment.all
+    @fms_g16_load = FmsG16Load.new
+    @fms_g16_routes = FmsG16Route.all
     @fms_g16_loads = FmsG16Load.all
   end
 

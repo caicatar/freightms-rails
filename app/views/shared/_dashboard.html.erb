@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-  <script async src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
   <%= csrf_meta_tags %>
   <title>Freight Management System</title>
 </head>
 
 <body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 <div class="container">
   <!-- Sidebar Section -->
   <aside>
@@ -35,21 +36,21 @@
                     </span>
         <h3>Dashboard</h3>
       </a>
-      <a href="<%= dashboard_shipments_page_path %>"
+      <a href="<%= fms_g16_shipments_path %>"
          class=" <%= (current_page?('/dashboard_shipments') || controller_name == 'fms_g16_shipments') ? 'active' : '' %>">
                     <span class="material-icons-sharp">
                         local_shipping
                     </span>
         <h3>Shipments</h3>
       </a>
-      <a href="<%= dashboard_routes_page_path %>"
+      <a href="<%= fms_g16_routes_path %>"
          class=" <%= (current_page?('/dashboard_routes') || controller_name == 'fms_g16_routes') ? 'active' : '' %>">
                       <span class="material-icons-sharp">
                           route
                       </span>
         <h3>Routes</h3>
       </a>
-      <a href="<%= dashboard_loads_page_path %>" class="<%= (current_page?('/dashboard_loads') || controller_name == 'fms_g16_loads') ? 'active' : '' %>">
+      <a href="<%= fms_g16_loads_path %>" class="<%= (current_page?('/dashboard_loads') || controller_name == 'fms_g16_loads') ? 'active' : '' %>">
                     <span class="material-icons-sharp">
                         inventory_2
                     </span>

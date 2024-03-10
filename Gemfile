@@ -71,3 +71,4 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "sassc-rails"
 gem 'kaminari'
+gem "tailwindcss-rails", "~> 2.3"
