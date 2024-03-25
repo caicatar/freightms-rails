@@ -4,10 +4,12 @@ class FmsG16RoutesController < ApplicationController
   # GET /fms_g16_routes or /fms_g16_routes.json
   def index
     @fms_g16_routes = FmsG16Route.all
+    @fms_g16_route = FmsG16Route.new
   end
 
   # GET /fms_g16_routes/1 or /fms_g16_routes/1.json
   def show
+    @fms_g16_route = FmsG16Route.find(params[:id])
   end
 
   # GET /fms_g16_routes/new

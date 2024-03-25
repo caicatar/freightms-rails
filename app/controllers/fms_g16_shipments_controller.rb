@@ -8,12 +8,20 @@ class FmsG16ShipmentsController < ApplicationController
     @fms_g16_routes = FmsG16Route.all
   end
 
+  def assign_load
+    @fms_g16_shipment = FmsG16Shipment.find(params[:id])
+    @fms_g16_load = FmsG16Load.find(params[:fms_g16_load_id])
+    @fms_g16_load.update(fms_g16_shipment_id: @fms_g16_shipment.id)
+    redirect_to @fms_g16_shipment, notice: 'Load was successfully consolidated to the shipment.'
+  end
+
   # GET /fms_g16_shipments/1 or /fms_g16_shipments/1.json
   def show
     @fms_g16_shipments = FmsG16Shipment.all
+    @fms_g16_loads_available = FmsG16Load.where(fms_g16_shipment_id: nil)
+    @fms_g16_loads = FmsG16Load.where(fms_g16_shipment_id: @fms_g16_shipment.id)
     @fms_g16_load = FmsG16Load.new
     @fms_g16_routes = FmsG16Route.all
-    @fms_g16_loads = FmsG16Load.all
   end
 
   # GET /fms_g16_shipments/new

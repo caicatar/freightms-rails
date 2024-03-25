@@ -11,32 +11,22 @@
     </div>
   <% end %>
 
-  <div class="order_form">
     <div class="row">
       <div class="order_details">
         <h2>Load Details</h2>
         <%= form.label :"Load Name"%>
         <%= form.text_field :name, class:"input-field" %>
-        <%= form.label :"Route" %>
-        <%= form.collection_select :fms_g16_route_id, @fms_g16_routes, :id, :name, {}, { class: 'input-field' }  %>
-        <%= form.label :"Shipment" %>
-        <%= form.collection_select :fms_g16_shipment_id, @fms_g16_shipments, :id, :id, {}, { class: 'input-field' }  %>
-        <%= form.label :"Total Price" %>
-        <%= form.text_field :total_price, class: 'input-field' %>
-        <%= form.label :"Total Fee" %>
-        <%= form.text_field :total_fee, class: 'input-field' %>
-        <%= form.label :"Total Weight" %>
-        <%= form.text_field :total_weight, class: 'input-field' %>
+        <%= form.label :"Description" %>
+        <%= form.text_field :description, class: 'input-field' %>
 
         <br>
         <br>
         <%= form.submit "Save load", class:"button" %>
       </div>
     </div>
-    <div class="row">
-      <%= link_to "Show this load", @fms_g16_load %>
-      <%= link_to "Back to warehouses", dashboard_loads_page_path %>
-    </div>
-  </div>
+<!--    <div class="row">-->
+      <%#= link_to "Show this load", @fms_g16_load %>
+      <%#= link_to "Back to warehouses", dashboard_loads_page_path %>
+<!--    </div>-->
 
 <% end %>

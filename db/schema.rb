@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_03_082247) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_03_183242) do
   create_table "fms_g16_loads", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
-    t.bigint "fms_g16_route_id"
     t.bigint "fms_g16_shipment_id"
+    t.string "description"
     t.decimal "total_price", precision: 10
     t.decimal "total_fee", precision: 10
     t.decimal "total_weight", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["fms_g16_route_id"], name: "index_fms_g16_loads_on_fms_g16_route_id"
     t.index ["fms_g16_shipment_id"], name: "index_fms_g16_loads_on_fms_g16_shipment_id"
   end
 
@@ -28,17 +27,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_082247) do
     t.string "name"
     t.string "item"
     t.integer "price"
-    t.integer "free"
+    t.integer "fee"
     t.integer "weight"
     t.string "dimension"
     t.string "LocationFrom"
     t.string "LocationTo"
-    t.bigint "fms_g16_route_id", null: false
-    t.bigint "fms_g16_load_id", null: false
+    t.string "qty"
+    t.bigint "fms_g16_load_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["fms_g16_load_id"], name: "index_fms_g16_orders_on_fms_g16_load_id"
-    t.index ["fms_g16_route_id"], name: "index_fms_g16_orders_on_fms_g16_route_id"
   end
 
   create_table "fms_g16_routes", charset: "utf8mb3", force: :cascade do |t|
@@ -56,9 +54,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_082247) do
   end
 
   create_table "fms_g16_shipments", charset: "utf8mb3", force: :cascade do |t|
+    t.string "name"
     t.date "start_date"
     t.date "end_date"
-    t.bigint "fms_g16_route_id", null: false
+    t.bigint "fms_g16_route_id"
     t.string "vehicle"
     t.string "driver"
     t.integer "total_distance"
@@ -72,7 +71,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_082247) do
     t.index ["fms_g16_route_id"], name: "index_fms_g16_shipments_on_fms_g16_route_id"
   end
 
-  create_table "users", charset: "utf8mb3", force: :cascade do |t|
+  create_table "fms_g16_users", charset: "utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -80,13 +79,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_03_082247) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_fms_g16_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_fms_g16_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "fms_g16_loads", "fms_g16_routes"
   add_foreign_key "fms_g16_loads", "fms_g16_shipments"
   add_foreign_key "fms_g16_orders", "fms_g16_loads"
-  add_foreign_key "fms_g16_orders", "fms_g16_routes"
   add_foreign_key "fms_g16_shipments", "fms_g16_routes"
 end

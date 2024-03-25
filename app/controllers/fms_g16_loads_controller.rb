@@ -4,12 +4,28 @@ class FmsG16LoadsController < ApplicationController
   # GET /fms_g16_loads or /fms_g16_loads.json
   def index
     @fms_g16_loads = FmsG16Load.all
+    @fms_g16_load = FmsG16Load.new
   end
 
+  def assign_order
+    @fms_g16_load = FmsG16Load.find(params[:id])
+    @fms_g16_order = FmsG16Order.find(params[:fms_g16_order_id])
+    @fms_g16_order.update(fms_g16_load_id: @fms_g16_load.id)
+    redirect_to @fms_g16_load, notice: 'Order was successfully added to load.'
+  end
+
+  def unload_order
+    @fms_g16_load = FmsG16Load.find(params[:id])
+    @fms_g16_order = FmsG16Order.find(params[:fms_g16_order_id])
+    @fms_g16_order.update(fms_g16_load_id: nil)
+    redirect_to @fms_g16_load, notice: 'Order was successfully unloaded from loads list.'
+  end
   # GET /fms_g16_loads/1 or /fms_g16_loads/1.json
+  #
   def show
     @fms_g16_routes = FmsG16Route.all
-    @fms_g16_orders = FmsG16Order.all
+    @fms_g16_orders = FmsG16Order.where(fms_g16_load_id: @fms_g16_load.id)
+    @fms_g16_orders_available = FmsG16Order.where(fms_g16_load_id: nil)
     @fms_g16_shipments = FmsG16Shipment.all
     @fms_g16_load = FmsG16Load.find(params[:id])
   end
@@ -74,7 +90,7 @@ class FmsG16LoadsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def fms_g16_load_params
       # params.fetch(:fms_g16_load, {})
-      params.require(:fms_g16_load).permit(:name, :fms_g16_route_id, :fms_g16_shipment_id, :total_price, :total_fee, :total_weight)
+      params.require(:fms_g16_load).permit(:name, :total_price, :total_fee, :total_weight)
 
     end
 end

@@ -9,8 +9,8 @@ class CreateFmsG16Orders < ActiveRecord::Migration[7.1]
       t.string  :dimension
       t.string :LocationFrom
       t.string :LocationTo
-      t.references :fms_g16_route, null: false, foreign_key: true
-      t.references :fms_g16_load, null: false, foreign_key: true
+      t.string :qty
+      t.references :fms_g16_load, null: true,foreign_key: true
 
       t.timestamps
     end

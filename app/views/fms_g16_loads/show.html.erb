@@ -1,11 +1,11 @@
 <p style="color: green"><%= notice %></p>
 <div class="order_form">
-  <h1>Load ID: <%= @fms_g16_load.id %></h1>
+  <h1><%= @fms_g16_load.name %></h1>
   <div class="row">
     <div class="order_details">
       <h4>Load Details</h4>
+      <h3>Description:<strong><%= @fms_g16_load.description %></strong></h3>
       <h3>Shipment ID:<strong><%= @fms_g16_load.fms_g16_shipment_id %></strong></h3>
-      <h3>Route: <strong><%=  @fms_g16_load.fms_g16_route_id %></strong></h3>
       <h3>Total Price: <strong><%= @fms_g16_load.total_price %></strong></h3>
       <h3>Total Fee: <strong><%= @fms_g16_load.total_fee %></strong></h3>
       <h3>Total Weight: <strong><%= @fms_g16_load.total_weight %></strong></h3>
@@ -13,40 +13,154 @@
     </div>
   </div>
 
-  <%= render @fms_g16_load %>
-  <div class="row">
-    <%= link_to "Edit this load", edit_fms_g16_load_path(@fms_g16_load), class:"button"%>
-    <%= link_to "Back to loads", dashboard_loads_page_path, class:"button" %>
-    <%= button_to "Destroy this load", @fms_g16_load, method: :delete, class:"button" %>
+  <div class="grid grid-cols-6 gap-4">
+    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Operations <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+    </svg>
+    </button>
+    <button data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+      + Add Orders
+    </button>
   </div>
 
+
+  <!-- Dropdown menu -->
+  <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+      <li>
+        <%= link_to "Edit this load", edit_fms_g16_load_path(@fms_g16_load),  class:"block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+      </li>
+      <li>
+        <%= link_to "Back to loads", dashboard_loads_page_path, class:"block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+      </li>
+      <li>
+        <div><%= button_to "Destroy this load", @fms_g16_load, method: :delete, class:"block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %></div>
+      </li>
+    </ul>
+  </div>
 </div>
-<div class="loads-table">
-  <h2>Orders</h2>
-  <table>
-    <thead>
-    <tr>
-      <th>Order Name</th>
-      <th>Item</th>
-      <th>Price</th>
-      <th>Free</th>
-      <th>Dimension</th>
-      <th>From</th>
-      <th>To</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @fms_g16_orders.each do |order| %>
-      <tr>
-        <td><%= order.name %></td>
-        <td><%= order.item %></td>
-        <td><%= order.price %></td>
-        <td><%= order.free %></td>
-        <td><%= order.dimension %></td>
-        <td><%= order.LocationFrom %></td>
-        <td><%= order.LocationTo %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
+<div class="py-5">
+  <h1>Orders</h1>
+</div>
+<div class="flex flex-col w-100">
+  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Order Ref#:
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Item:
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Price
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Fee
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Weight
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Dimension
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Origin
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Destination
+            </th>
+          </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+          <% @fms_g16_orders.each do |order| %>
+            <tr>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex items-center">
+                  <div class="ml-4">
+                    <div class="text-sm font-medium text-gray-900 text-center">
+                      <%= order.name %>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-500 text-center">
+                  <%= order.name %>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-500">
+                  <%= order.price %>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-500">
+                  <%= order.fee %>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-500">
+                  <%= order.weight %>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-500">
+                  <%= order.dimension %>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-500">
+                  <%= order.LocationFrom %>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-500">
+                  <%= order.LocationTo %>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-500">
+                  <%= button_to 'Unload', unload_order_fms_g16_load_path(@fms_g16_load, fms_g16_order_id: order.id), class:"text-gray-900 bg-blue-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center", remote: true, confirm: 'Are you sure?' %>
+                </div>
+              </td>
+              <% end %>
+            </tr>
+          <!-- More rows can be added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- MODAL --->
+<div id="extralarge-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-7xl max-h-full">
+    <!-- Modal content -->
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <!-- Modal header -->
+      <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+        <h3 class="text-xl font-medium text-gray-900 dark:text-white">
+          Add Orders
+        </h3>
+        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="extralarge-modal">
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="p-4 md:p-5 space-y-5">
+        <%= render "add_order", fms_g16_orders_available: @fms_g16_orders_available, fms_g16_load_id: @fms_g16_load.id %>
+      </div>
+      <!-- Modal footer -->
+      <div class="flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse border-t border-gray-200 rounded-b dark:border-gray-600">
+        <button data-modal-hide="extralarge-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   devise_for :fms_g16_users
-  resources :fms_g16_shipments
-  resources :fms_g16_loads
+  resources :fms_g16_shipments do
+    post 'assign_load', on: :member
+    post 'unload_load', on: :member
+  end
   resources :fms_g16_routes
+  resources :fms_g16_loads do
+    post 'assign_order', on: :member
+    post 'unload_order', on: :member
+  end
   # devise_for :users, controllers: {
   #   registrations: 'users/registrations',
   #   sessions: 'users/sessions'
